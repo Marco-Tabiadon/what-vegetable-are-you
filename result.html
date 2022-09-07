@@ -28,17 +28,22 @@
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
                         <h1 class="text-white font-weight-bold">Your result is:</h1>
-                        <h2 id="ProfileName" class="text-white-75 mb-5"></h2>
+                        <p id="ProfileName" class="text-white-75 mb-5"></p>
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <h2 id="ProfileName" class="text-white-75 mb-5"></h2>
                         <a class="btn btn-primary btn-xl" href="test.html">Redo the test</a>
                     </div>
                 </div>
             </div>
         </header>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script>
+            let user = localStorage.getItem("_cb_user");
+            user = JSON.parse(user);
+            const nameNode = document.getElementById("ProfileName");
+            nameNode.innerHTML = user.name;
+       </script>
     </body>
 </html>
 
